@@ -1,0 +1,48 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+#--------------------------------------------------------
+# zplug
+#--------------------------------------------------------
+export ZPLUG_HOME=/opt/homebrew/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
+
+#--------------------------------------------------------
+# prezto
+#--------------------------------------------------------
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+  autoload -U promptinit; promptinit
+  prompt pure
+fi
+
+# Customize to your needs...
+#--------------------------------------------------------
+# asdf
+#--------------------------------------------------------
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+#--------------------------------------------------------
+# jump
+#--------------------------------------------------------
+eval "$(jump shell)"
+
+#--------------------------------------------------------
+# alias
+#--------------------------------------------------------
+alias emacs="emacs -nw"
+alias la="ls -aFG"
+alias ls="ls -FG"
+alias ll="ls -alFG"
+alias dc="docker-compose"
+alias do="docker"
+
+#--------------------------------------------------------
+# path
+#--------------------------------------------------------
+export PATH=/opt/homebrew/opt/mysql-client/bin:${PATH}
