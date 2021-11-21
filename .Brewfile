@@ -36,3 +36,4 @@ brew "heroku"
 brew "mysql-connector-c"
 
 mas "CyberDuck", id: 409222199
+mas "Xcode ", id: 497799835

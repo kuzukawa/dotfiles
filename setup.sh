@@ -37,3 +37,6 @@ which brew >/dev/null 2>&1 && brew cleanup --verbose
 
 ### create symbolic links
 ./_link.sh
+
+### zplug install
+exec $SHELL -l && zplug install
