@@ -22,6 +22,16 @@
 (setq straight-use-package-by-default t)
 (use-package init-loader)
 (use-package exec-path-from-shell)
+(use-package yaml-mode)
+
+(use-package docker)
+
+(use-package dockerfile-mode)
+(add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
+
+(use-package docker-compose-mode)
+(use-package docker-tramp)
+(set-variable 'docker-tramp-use-names t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Environment settings

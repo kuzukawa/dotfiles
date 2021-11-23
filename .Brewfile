@@ -34,6 +34,7 @@ brew "gpg"
 brew "zplug"
 brew "heroku"
 brew "mysql-connector-c"
+brew "shared-mime-info"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835
