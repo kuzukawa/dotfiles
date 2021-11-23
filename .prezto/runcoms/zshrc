@@ -25,9 +25,10 @@ fi
 
 # Customize to your needs...
 #--------------------------------------------------------
-# asdf
+# asdf(arm64) / anyenv(x86_64)
 #--------------------------------------------------------
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+[ `uname -m` = 'arm64' ] && . /opt/homebrew/opt/asdf/libexec/asdf.sh
+[ `uname -m` = 'x86_64' ] && eval "$(anyenv init -)"
 
 #--------------------------------------------------------
 # jump
@@ -43,8 +44,8 @@ alias ls="ls -FG"
 alias ll="ls -alFG"
 alias dc="docker-compose"
 alias do="docker"
-
+alias brewx="arch -x86_64 /usr/local/bin/brew"
 #--------------------------------------------------------
 # path
 #--------------------------------------------------------
-export PATH=/opt/homebrew/opt/mysql-client/bin:${PATH}
+# see zprofile.

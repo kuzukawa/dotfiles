@@ -14,29 +14,59 @@ xcode-select --install
 # tpm(tmux plugin)
 [ ! -d ~/.tmux/plugins/tpm ] && mkdir -p ~/.tmux/plugins/tpm && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# homebrew
+#------------------------------------------
+# homebrew(arm64)
+#------------------------------------------
 echo "Installing homebrew..."
-which brew >/dev/null 2>&1 || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+which /opt/homebrew/bin/brew >/dev/null 2>&1 || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "Executing brew doctor..."
-which brew >/dev/null 2>&1 && brew doctor
+which /opt/homebrew/bin/brew >/dev/null 2>&1 && brew doctor
 
 echo "Running brew update..."
-which brew >/dev/null 2>&1 && brew update --verbose
+which /opt/homebrew/bin/brew >/dev/null 2>&1 && brew update --verbose
 
 echo "Running brew upgrade..."
-which brew >/dev/null 2>&1 && brew upgrade --verbose
+which /opt/homebrew/bin/brew >/dev/null 2>&1 && brew upgrade --verbose
 
 ### bundle with .Brewfile
 echo "Installing apps with .Brewfile..."
-ln -s `pwd`/.Brewfile ~
-brew bundle --global --verbose
+which /opt/homebrew/bin/brew >/dev/null 2>&1 && brew bundle --file ./.Brewfile --verbose
 
 echo "Running brew cleanup..."
 which brew >/dev/null 2>&1 && brew cleanup --verbose
 
+#------------------------------------------
+# homebrew(x86_64)
+#------------------------------------------
+echo "Installing homebrew(x86_64)..."
+which /usr/local/bin/brew >/dev/null 2>&1 || arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+echo "Executing brew doctor(x86_64)..."
+which /usr/local/bin/brew >/dev/null 2>&1 && arch -x86_64 /usr/local/bin/brew doctor
+
+echo "Running brew update(x86_64)..."
+which /usr/local/bin/brew >/dev/null 2>&1 && arch -x86_64 /usr/local/bin/brew update --verbose
+
+echo "Running brew upgrade(x86_64)..."
+which /usr/local/bin/brew >/dev/null 2>&1 && arch -x86_64 /usr/local/bin/brew upgrade --verbose
+
+### bundle with .Brewfile
+echo "Installing apps with .Brewfile_x86_64)..."
+which /usr/local/bin/brew >/dev/null 2>&1 && arch -x86_64 /usr/local/bin/brew bundle --file ./.Brewfile_x86_64 --verbose
+
+echo "Running brew cleanup..."
+which /usr/local/bin/brew >/dev/null 2>&1 && arch -x86_64 /usr/local/bin/brew cleanup --verbose
+
 ### create symbolic links
+echo "Creating symlinks..."
 ./_link.sh
 
+echo "Running brew cleanup..."
+which brew >/dev/null 2>&1 && brew cleanup --verbose
+
+
+
 ### zplug install
+echo "Installing zplug..."
 exec $SHELL -l && zplug install

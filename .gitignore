@@ -19,12 +19,14 @@
 !/.emacs.d/lisp/**
 
 !/.Brewfile
+!/.Brewfile_x86_64
 !/.gitconfig
 !/.tmux.conf
 !/.asdfrc
 !/setup.sh
 !/_link.sh
 !/_asdf.sh
+!/_anyenv.sh
 
 !/README.md
 !/LICENCE

@@ -1,0 +1,5 @@
+cask_args appdir: "/Applications"
+tap "homebrew/core"
+
+brew "jump"
+brew "anyenv"

@@ -62,4 +62,9 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+#--------------------------------------------------------
+# path
+#--------------------------------------------------------
+[ `uname -m` = 'x86_64' ] && echo "😀 Be careful, this is x86_64 Shell 😀" && eval $(/usr/local/bin/brew shellenv)
+[ `uname -m` = 'arm64' ] && echo "💪 You are on arm64 Shell 💪" && eval $(/opt/homebrew/bin/brew shellenv)
+export PATH=/opt/homebrew/opt/mysql-client/bin:${PATH}
