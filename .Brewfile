@@ -14,7 +14,7 @@ cask "zoom"
 cask "alfred"
 cask "typora"
 cask "postman"
-
+cask "drawio"
 cask "font-jetbrains-mono"
 cask "choosy"
 

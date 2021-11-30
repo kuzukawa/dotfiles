@@ -69,3 +69,6 @@ fi
 [ `uname -m` = 'x86_64' ] && export PATH=/usr/local/opt/mysql-client/bin:${PATH}
 [ `uname -m` = 'arm64' ] && echo "💪 You are on arm64 Shell 💪" && eval $(/opt/homebrew/bin/brew shellenv)
 [ `uname -m` = 'arm64' ] && export PATH=/opt/homebrew/opt/mysql-client/bin:${PATH}
+
+# Add my own tools to PATH.
+export PATH=~/tools/bin:${PATH}
