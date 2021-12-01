@@ -33,7 +33,8 @@ brew "bat"
 brew "gpg"
 brew "zplug"
 brew "heroku"
-
+brew "git"
+brew "git-lfs"
 brew "mysql-connector-c"
 brew "shared-mime-info"
 
