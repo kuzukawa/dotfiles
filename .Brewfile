@@ -40,3 +40,4 @@ brew "shared-mime-info"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835
+mas "feedly. Read more, know more.", id: 865500966
