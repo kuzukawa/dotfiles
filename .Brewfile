@@ -37,6 +37,7 @@ brew "git"
 brew "git-lfs"
 brew "mysql-connector-c"
 brew "shared-mime-info"
+brew "yarn"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835
