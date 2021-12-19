@@ -17,6 +17,7 @@ cask "postman"
 cask "drawio"
 cask "font-jetbrains-mono"
 cask "choosy"
+cask "firefox"
 
 cask "docker"
 brew "docker"
