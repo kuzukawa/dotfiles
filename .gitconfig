@@ -14,7 +14,7 @@
 [init]
 	defaultBranch = main
 [core]
-	editor = emacs
+	editor = emacs -nw
 [color]
 	diff = auto
 	status = auto
