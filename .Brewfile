@@ -18,6 +18,7 @@ cask "drawio"
 cask "font-jetbrains-mono"
 cask "choosy"
 cask "firefox"
+cask "racket"
 
 cask "docker"
 brew "docker"
