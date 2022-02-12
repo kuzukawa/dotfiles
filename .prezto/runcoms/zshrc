@@ -55,3 +55,7 @@ alias brewx="arch -x86_64 /usr/local/bin/brew"
 function md (){
   open -a Typora $1
 }
+
+function docker-tags {
+  curl -s https://registry.hub.docker.com/v1/repositories/$1/tags | jq -r '.[].name'
+}

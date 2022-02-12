@@ -22,6 +22,7 @@
 (setq straight-use-package-by-default t)
 (use-package init-loader)
 (use-package exec-path-from-shell)
+(use-package typescript-mode)
 (use-package yaml-mode)
 
 (use-package docker)
@@ -32,6 +33,23 @@
 (use-package docker-compose-mode)
 (use-package docker-tramp)
 (set-variable 'docker-tramp-use-names t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; EditorConfig
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; racket(Scheme)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package racket-mode)
+(add-hook 'racket-mode-hook
+          (lambda()
+            (define-key racket-mode-map (kbd "<f5>") 'racket-run)))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; company
