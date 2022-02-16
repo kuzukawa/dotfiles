@@ -12,6 +12,7 @@ export ZPLUG_HOME=/opt/homebrew/opt/zplug
 source $ZPLUG_HOME/init.zsh
 zplug "plugins/web-search", from:oh-my-zsh
 zplug "plugins/history", from:oh-my-zsh
+zplug "junegunn/fzf", from:gh-r, as:command, rename-to:fzf
 zplug load
 
 #--------------------------------------------------------
@@ -45,10 +46,12 @@ alias ll="ls -alFG"
 alias dc="docker-compose"
 alias do="docker"
 alias brewx="arch -x86_64 /usr/local/bin/brew"
+
 #--------------------------------------------------------
 # path
 #--------------------------------------------------------
 # see zprofile.
+
 #--------------------------------------------------------
 # functions
 #--------------------------------------------------------
@@ -59,3 +62,5 @@ function md (){
 function docker-tags {
   curl -s https://registry.hub.docker.com/v1/repositories/$1/tags | jq -r '.[].name'
 }
+
+
