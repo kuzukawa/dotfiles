@@ -63,4 +63,11 @@ function docker-tags {
   curl -s https://registry.hub.docker.com/v1/repositories/$1/tags | jq -r '.[].name'
 }
 
-
+incremental_search_history() {
+  selected=`history -E 1 | fzf | cut -b 26-`
+  BUFFER=`[ ${#selected} -gt 0 ] && echo $selected || echo $BUFFER`
+  CURSOR=${#BUFFER}
+  zle redisplay
+}
+zle -N incremental_search_history
+bindkey "^R" incremental_search_history
