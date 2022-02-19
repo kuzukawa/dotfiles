@@ -44,6 +44,7 @@ brew "shared-mime-info"
 brew "yarn"
 brew "hstr"
 brew "gh"
+brew "putty"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835
