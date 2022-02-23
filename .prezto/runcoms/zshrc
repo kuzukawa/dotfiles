@@ -51,6 +51,7 @@ alias brewx="arch -x86_64 /usr/local/bin/brew"
 # path
 #--------------------------------------------------------
 # see zprofile.
+export PATH="/opt/homebrew/opt/llvm@12/bin:$PATH"
 
 #--------------------------------------------------------
 # functions
@@ -71,3 +72,5 @@ incremental_search_history() {
 }
 zle -N incremental_search_history
 bindkey "^R" incremental_search_history
+[ -f "/Users/kuzukawa/.ghcup/env" ] && source "/Users/kuzukawa/.ghcup/env" # ghcup-env
+

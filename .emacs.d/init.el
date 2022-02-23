@@ -24,7 +24,7 @@
 (use-package exec-path-from-shell)
 (use-package typescript-mode)
 (use-package yaml-mode)
-
+(use-package haskell-mode)
 (use-package docker)
 
 (use-package dockerfile-mode)
