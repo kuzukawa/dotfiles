@@ -46,6 +46,7 @@ brew "hstr"
 brew "gh"
 brew "putty"
 brew "llvm@12"
+brew "weighttp"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835

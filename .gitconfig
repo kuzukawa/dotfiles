@@ -7,9 +7,24 @@
 	process = git-lfs filter-process
 	required = true
 [alias]
-	st = status
-	cm = commit
-	co = checkout
+        pu = "!f(){ git push origin `git rev-parse --abbrev-ref HEAD` ${1}; git pr; }; f"
+        ch = !git checkout
+        addi = !git add -i
+        dev = "!f(){ git ch develop; git pl; }; f"
+        new = "!f(){ git ch -b feature/${1};};f"
+        dev-rebase = "!f(){ git fetch origin develop; git rebase origin/develop;};f"
+        co = "!f(){ git commit -m \"$(cat ~/.gitemoji | fzf | sed \"s/ - :.*//g\")${1}\";};f"
+        cd = "!f(){ git ch $(git branch | sed \"s/* /  /g\" | fzf); };f"
+        save = !git stash save
+        load = "!f() { git stash apply --index $(git stash list | fzf | sed 's/stash@{//g' | sed \"s/}.*//g\"); }; f"
+        pr = "!f() { echo PR Url: $(git remote show -n origin | grep \"Push  URL\" | sed \"s/.*URL: git@//g\" | sed \"s/\\.git//g\" | sed \"s/:/\\//\")/compare/develop...$(git rev-parse --abbrev-ref HEAD); }; f"
+        pm = "!f() { b=`git rev-parse --abbrev-ref HEAD`; git dev; git branch -D $b; git pull; git ch $b;}; f"
+        pl = !git pull --prune
+        lg = !git log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+        amend = !git commit --amend
+        re-continue = !git rebase --continue
+        re-abort = !git rebase --abort
+        st = status
         graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
 [init]
 	defaultBranch = main
@@ -19,3 +34,11 @@
 	diff = auto
 	status = auto
 	branch = auto
+[merge]
+    tool = vscode
+[mergetool]
+    prompt = false
+    keepBackup = false
+[mergetool "vscode"]
+    cmd = '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' \"$MERGED\"
+    trustExitCode = false
