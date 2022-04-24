@@ -23,7 +23,9 @@
 (use-package init-loader)
 (use-package exec-path-from-shell)
 (use-package typescript-mode)
+(use-package tide)
 (use-package yaml-mode)
+(use-package php-mode)
 (use-package haskell-mode)
 (use-package docker)
 
@@ -287,6 +289,7 @@ n	 ".docx -f markdown -t docx -c ~/.css/github-markdown.css"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; typescript
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
 (add-hook 'typescript-mode-hook
 		  (lambda ()
 			(interactive)
@@ -295,7 +298,9 @@ n	 ".docx -f markdown -t docx -c ~/.css/github-markdown.css"))
 			(setq flycheck-check-syntax-automatically '(save mode-enabled))
 			(eldoc-mode +1)
 			(tide-hl-identifier-mode +1)
-			(company-mode +1)))
+			(company-mode +1)
+                        (eldoc-mode +1)
+                        ))
 
 
 

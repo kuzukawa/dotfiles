@@ -19,6 +19,7 @@ cask "font-jetbrains-mono"
 cask "choosy"
 cask "firefox"
 cask "racket"
+cask "azure-cli"
 
 cask "docker"
 brew "docker"
@@ -47,6 +48,8 @@ brew "gh"
 brew "putty"
 brew "llvm@12"
 brew "weighttp"
+brew "jupyterlab"
+brew "httpei"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835
