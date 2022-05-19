@@ -20,6 +20,7 @@ cask "choosy"
 cask "firefox"
 cask "racket"
 cask "azure-cli"
+cask "discord"
 
 cask "docker"
 brew "docker"
@@ -50,6 +51,9 @@ brew "llvm@12"
 brew "weighttp"
 brew "jupyterlab"
 brew "httpei"
+brew "flutter"
+brew "android-studio"
+brew "dotnet"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835

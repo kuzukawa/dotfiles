@@ -29,6 +29,8 @@
 [init]
 	defaultBranch = main
 [core]
+        pager = less -m
+        quotepath = false
 	editor = emacs -nw
 [color]
 	diff = auto
