@@ -15,11 +15,23 @@
   (load bootstrap-file nil 'nomessage))
 (setq warning-suppress-log-types '((package reinitialization)))
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Package install
+;; straight
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (straight-use-package 'use-package)
 (setq straight-use-package-by-default t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; tree-sitter
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(use-package tree-sitter :ensure t)
+;(use-package tree-sitter-langs :ensure t)
+;(use-package tree-sitter-indent :ensure t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Package install
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package init-loader)
 (use-package exec-path-from-shell)
 (use-package typescript-mode)
@@ -27,6 +39,7 @@
 (use-package yaml-mode)
 (use-package php-mode)
 (use-package haskell-mode)
+(use-package protobuf-mode)
 (use-package docker)
 
 (use-package dockerfile-mode)
@@ -35,6 +48,8 @@
 (use-package docker-compose-mode)
 (use-package docker-tramp)
 (set-variable 'docker-tramp-use-names t)
+
+(use-package csharp-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; EditorConfig

@@ -3,6 +3,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "heroku/brew"
+tap "aws/tap"
 
 cask "google-chrome"
 cask "box-drive"
@@ -54,6 +55,8 @@ brew "httpei"
 brew "flutter"
 brew "android-studio"
 brew "dotnet"
+brew "sqlite"
+brew "aws-sam-cli"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835
