@@ -22,7 +22,7 @@ cask "firefox"
 cask "racket"
 cask "azure-cli"
 cask "discord"
-
+cask "zulip"
 cask "docker"
 brew "docker"
 
@@ -57,6 +57,7 @@ brew "android-studio"
 brew "dotnet"
 brew "sqlite"
 brew "aws-sam-cli"
+brew "bazelisk"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835

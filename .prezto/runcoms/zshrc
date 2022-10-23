@@ -74,3 +74,7 @@ zle -N incremental_search_history
 bindkey "^R" incremental_search_history
 [ -f "/Users/kuzukawa/.ghcup/env" ] && source "/Users/kuzukawa/.ghcup/env" # ghcup-env
 
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

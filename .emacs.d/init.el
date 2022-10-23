@@ -1,4 +1,8 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; package --- Summery
+;;; Commentary:
+;;; Code:
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; straight.el
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defvar bootstrap-version)
@@ -50,6 +54,11 @@
 (set-variable 'docker-tramp-use-names t)
 
 (use-package csharp-mode)
+(use-package apache-mode)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; YaSnippet
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package yasnippet)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; EditorConfig
@@ -58,6 +67,28 @@
   :ensure t
   :config
   (editorconfig-mode 1))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; rust
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package rust-mode
+  :ensure t
+  :custom rust-format-on-save t)
+
+(use-package cargo
+  :ensure t
+  :hook (rust-mode . cargo-minor-mode))
+
+(use-package lsp-mode
+  :ensure t
+  :init (yas-global-mode)
+  :hook (rust-mode . lsp)
+  :bind ("C-c h" . lsp-describe-thing-at-point)
+  :custom (lsp-rust-server 'rls))
+
+(use-package lsp-ui
+  :ensure t)
+  
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; racket(Scheme)
