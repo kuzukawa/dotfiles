@@ -76,5 +76,4 @@ bindkey "^R" incremental_search_history
 
 
 
-# Load Angular CLI autocompletion.
-source <(ng completion script)
+
