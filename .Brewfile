@@ -58,6 +58,7 @@ brew "dotnet"
 brew "sqlite"
 brew "aws-sam-cli"
 brew "bazelisk"
+brew "shihanng/gig/gig"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835

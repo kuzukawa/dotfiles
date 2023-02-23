@@ -173,8 +173,14 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Theme
-;(load-theme 'jazz t)
-(defvar my/load-themes '(manoj-dark tango))
+
+;(setq modus-themes-mode-line '(accented borderless padded))
+(setq modus-themes-mode-line '(accented borderless padded))
+
+(setq modus-themes-region '(accented no-extend))
+
+(load-theme 'modus-vivendi t)
+(defvar my/load-themes '(modus-vivendi modus-operandi))
 (defun toggle-load-theme ()
   "Toggle `load-theme'."
   (interactive)
@@ -228,10 +234,19 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; for Org-mode
-(global-set-key (kbd "C-c a") 'org-agenda)
-(setq org-directory "~/GoogleDrive/org")
+(setq org-todo-keywords '((sequence "TODO(t)" "SOMEDAY(s)" "WAITING(w)" "|"  "DONE(d)")))
+(setq org-log-done 'time)
+
+(global-set-key (kbd "C-c l") #'org-store-link)
+(global-set-key (kbd "C-c a") #'org-agenda)
+(global-set-key (kbd "C-c c") #'org-capture)
+
+(setq org-directory "~/kuzukawa@gmail.com - Google Drive/My Drive/org")
 (setq org-default-notes-file (concat org-directory "/todo.org"))
-(setq org-agenda-files (list org-default-notes-file))
+(setq org-agenda-files (list org-default-notes-file
+                             (concat org-directory "/projects")
+                             (concat org-directory "/personal")
+                             (concat org-directory "/study")))
 
 ; Org-captureの設定
 
@@ -239,7 +254,7 @@
 (define-key global-map "\C-cc" 'org-capture)
 ; Org-captureのテンプレート（メニュー）の設定
 (setq org-capture-templates
-      '(("n" "Note" entry (file+headline "~/GoogleDrive/Org/notes.org" "Notes")
+      '(("n" "Note" entry (file+headline "~/kuzukawa@gmail.com - Google Drive/My Drive/org/notes.org" "Notes")
          "* %?\nEntered on %U\n %i\n %a")
         ))
 
@@ -252,7 +267,7 @@
       (let ((buffer (get-buffer file)))
         (switch-to-buffer buffer)
         (message "%s" file))
-    (find-file (concat "~/GoogleDrive/Org/" file))))
+    (find-file (concat "~/kuzukawa@gmail.com - Google Drive/My Drive/org/" file))))
 (global-set-key (kbd "C-M-^") '(lambda () (interactive)
                                  (show-org-buffer "notes.org")))
 
