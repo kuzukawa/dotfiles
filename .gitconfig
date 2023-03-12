@@ -32,6 +32,7 @@
         pager = less -m
         quotepath = false
 	editor = emacs -nw
+        excludesfile = ~/.gitignore_global
 [color]
 	diff = auto
 	status = auto

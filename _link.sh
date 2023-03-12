@@ -10,7 +10,7 @@ ln -sf `pwd`/.prezto/runcoms/zshrc ~/.zshrc
 
 
 # simple dotfiles
-DOT_FILES=".gitconfig .tmux.conf .emacs.d .asdfrc"
+DOT_FILES=".gitconfig .gitignore_global .tmux.conf .emacs.d .asdfrc"
 for file in $DOT_FILES
 do
     ln -sf `pwd`/$file ~
