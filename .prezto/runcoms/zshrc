@@ -43,7 +43,7 @@ alias emacs="emacs -nw"
 alias la="ls -aFG"
 alias ls="ls -FG"
 alias ll="ls -alFG"
-alias dc="docker-compose"
+alias dc="docker compose"
 alias do="docker"
 alias brewx="arch -x86_64 /usr/local/bin/brew"
 
