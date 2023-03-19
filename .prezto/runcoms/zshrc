@@ -46,6 +46,7 @@ alias ll="ls -alFG"
 alias dc="docker compose"
 alias do="docker"
 alias brewx="arch -x86_64 /usr/local/bin/brew"
+alias dm="ruby ~/tools/bin/docker-manifest.rb"
 
 #--------------------------------------------------------
 # path
