@@ -60,6 +60,7 @@ brew "aws-sam-cli"
 brew "bazelisk"
 brew "shihanng/gig/gig"
 brew "doxygen"
+brew "sbcl"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835
