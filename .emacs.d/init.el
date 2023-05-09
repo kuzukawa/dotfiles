@@ -57,6 +57,12 @@
 (use-package apache-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; SLIME
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(load (expand-file-name "~/.quicklisp/slime-helper.el"))
+(setq inferior-lisp-program "sbcl")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; web-mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package web-mode)

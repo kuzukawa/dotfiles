@@ -45,3 +45,5 @@
 [mergetool "vscode"]
     cmd = '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' \"$MERGED\"
     trustExitCode = false
+[commit]
+	template = /Users/kuzukawa/.commit_template

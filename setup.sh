@@ -70,3 +70,6 @@ which brew >/dev/null 2>&1 && brew cleanup --verbose
 ### zplug install
 echo "Installing zplug..."
 exec $SHELL -l && zplug install
+
+### git config
+git config --global commit.template ~/.commit_template
