@@ -4,7 +4,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "heroku/brew"
 tap "aws/tap"
-tap "sidneys/homebrew"
+tap "minacle/chntpw"
 
 cask "google-chrome"
 cask "box-drive"
@@ -74,7 +74,7 @@ brew "libpq"
 brew "cabextract"
 brew "wimlib"
 brew "cdrtools"
-brew "sidneys/homebrew/chntpw"
+brew "minacle/chntpw/chntpw"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835
