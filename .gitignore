@@ -27,6 +27,7 @@
 !/_link.sh
 !/_asdf.sh
 !/_anyenv.sh
+!/.env_sample
 
 !/README.md
 !/LICENCE

@@ -61,6 +61,11 @@ function md (){
   open -a Typora $1
 }
 
+#--------------------------------------------------------
+# environments
+#--------------------------------------------------------
+export $(cat .env | grep -v "#" | xargs)
+
 incremental_search_history() {
   selected=`history -E 1 | fzf | cut -b 26-`
   BUFFER=`[ ${#selected} -gt 0 ] && echo $selected || echo $BUFFER`
