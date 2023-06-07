@@ -23,6 +23,7 @@ cask "racket"
 cask "azure-cli"
 cask "discord"
 cask "zulip"
+cask "cljstyle"
 cask "docker"
 brew "docker"
 
@@ -71,6 +72,8 @@ brew "libzip"
 brew "re2c"
 brew "libpq"
 brew "cabextract"
+brew "clojure/tools/clojure"
+brew "borkdude/brew/clj-kondo"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835
