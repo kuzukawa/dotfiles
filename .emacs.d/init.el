@@ -57,6 +57,24 @@
 (use-package apache-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; org-download
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package org-download)
+(setq-default org-download-image-dir "~/kuzukawa@gmail.com - Google Drive/My Drive/org/img")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; copilot
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package copilot
+  :straight (:host github :repo "zerolfx/copilot.el" :files ("dist" "*.el"))
+  :ensure t)
+;; you can utilize :map :hook and :config to customize copilot
+(add-hook 'prog-mode-hook 'copilot-mode)
+(define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
+(define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; SLIME
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (load (expand-file-name "~/.quicklisp/slime-helper.el"))
@@ -83,6 +101,12 @@
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
 (setq web-mode-code-indent-offset 2)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; rjsx
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package rjsx-mode)
+(add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . rjsx-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; YaSnippet
@@ -280,6 +304,7 @@
 (setq org-agenda-files (list org-default-notes-file
                              (concat org-directory "/projects")
                              (concat org-directory "/personal")
+                             (concat org-directory "/daily")
                              (concat org-directory "/study")))
 
 ; Org-captureの設定
