@@ -63,6 +63,21 @@
 (setq-default org-download-image-dir "~/kuzukawa@gmail.com - Google Drive/My Drive/org/img")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; org-babel
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '(
+   (shell . t)
+   (ruby . t)
+   (python . t)
+   (js . t)
+   (java . t)
+   (C . t)
+   (haskell . t)
+   ))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; copilot
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package copilot
@@ -164,6 +179,11 @@
   :config
   (global-company-mode t)
   (global-set-key (kbd "<C-tab>") 'company-complete)
+  (setq company-idle-delay 0)
+  (setq company-minimum-prefix-length 2)
+  (setq company-selection-wrap-around t)
+  (setq completion-ignore-case t)
+  
   (bind-keys :map company-active-map
     ("C-n" . company-select-next)
     ("C-p" . company-select-previous)
@@ -264,8 +284,10 @@
   (exec-path-from-shell-initialize))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; markdown mode
+;; for markdown
 (setq markdown-fontify-code-blocks-natively t)
+(eval-after-load "org"
+  '(require 'ox-md nil t))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; markdown preview mode
