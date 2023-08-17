@@ -24,6 +24,7 @@ cask "azure-cli"
 cask "discord"
 cask "zulip"
 cask "cljstyle"
+cask "google-cloud-sdk"
 cask "docker"
 brew "docker"
 
@@ -75,6 +76,7 @@ brew "cabextract"
 brew "clojure/tools/clojure"
 brew "borkdude/brew/clj-kondo"
 brew "leiningen"
+brew "graphviz"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835

@@ -64,7 +64,7 @@ function md (){
 #--------------------------------------------------------
 # environments
 #--------------------------------------------------------
-export $(cat .env | grep -v "#" | xargs)
+export $(cat ~/.env | grep -v "#" | xargs)
 
 incremental_search_history() {
   selected=`history -E 1 | fzf | cut -b 26-`
