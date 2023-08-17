@@ -77,6 +77,7 @@ brew "clojure/tools/clojure"
 brew "borkdude/brew/clj-kondo"
 brew "leiningen"
 brew "graphviz"
+brew "roswell"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835
