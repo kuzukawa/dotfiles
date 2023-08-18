@@ -140,6 +140,8 @@
 (load "init-slime-mode")
 (load "init-racket-mode")
 
+(load "init-rainbow-mode")
+
 (load "init-org")
 (load "init-treemacs")
 (load "init-helm")

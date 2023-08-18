@@ -1,7 +1,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; typescript
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package typescript-mode)
+(use-package typescript-mode
+  :init
+  (setq typescript-indent-level 2))
 (use-package tide)
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
 (add-hook 'typescript-mode-hook
