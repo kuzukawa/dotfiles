@@ -1,6 +1,9 @@
-;;;;;;;;;;;;;;;;;;;;
-;; helm
-;;;;;;;;;;;;;;;;;;;;
+;;; package --- Summary
+
+;;; Commentary:
+;; helm config
+
+;;; Code:
 (use-package helm :straight t)
 (helm-mode 1)
 
@@ -14,3 +17,6 @@
 (global-set-key (kbd "C-x b") 'helm-mini)
 
 (put 'narrow-to-region 'disabled nil)
+
+(provide 'init-helm)
+;;; init-helm.el ends here

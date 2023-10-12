@@ -1,6 +1,11 @@
 ;;; package --- Summery
+
 ;;; Commentary:
+
 ;;; Code:
+
+;(require 'profiler)
+;(profiler-start 'cpu)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; straight
@@ -46,6 +51,9 @@
 (setenv "LANG" "en_US.UTF-8")
 (setq default-directory "~/")
 
+;; hide scroll bar
+(scroll-bar-mode -1)
+
 ;; hide menu bar
 (menu-bar-mode -1)
 
@@ -81,17 +89,17 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Theme
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(setq modus-themes-mode-line '(accented borderless padded))
-(setq modus-themes-region '(accented no-extend))
-(load-theme 'modus-vivendi t)
-(defvar my/load-themes '(modus-vivendi modus-operandi))
-(defun toggle-load-theme ()
-  "Toggle `load-theme'."
-  (interactive)
-  (let ((current-theme (car custom-enabled-themes)))
-    (load-theme
-    (car (or (cdr (member current-theme my/load-themes))
-              my/load-themes)))))
+;(setq modus-themes-mode-line '(accented borderless padded))
+;(setq modus-themes-region '(accented no-extend))
+;(load-theme 'modus-vivendi t)
+;(defvar my/load-themes '(modus-vivendi modus-operandi))
+;(defun toggle-load-theme ()
+;  "Toggle `load-theme'."
+;  (interactive)
+;  (let ((current-theme (car custom-enabled-themes)))
+;    (load-theme
+;    (car (or (cdr (member current-theme my/load-themes))
+;              my/load-themes)))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Utlities
@@ -118,12 +126,15 @@
 ;; alias
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; http://ergoemacs.org/emacs/emacs_alias.html
-(add-to-list 'load-path "~/.emacs.d/lisp")
-(load "my-alias")
+(defalias 'yes-or-no-p 'y-or-n-p)
+(defalias 'list-buffers 'ibuffer)
+(defalias 'mpm 'markdown-preview-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; other settings
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-to-list 'load-path "~/.emacs.d/lisp")
+(load "init-doom")
 (load "init-editorconfig")
 (load "init-company")
 (load "init-flycheck")
@@ -139,10 +150,15 @@
 (load "init-rust-mode")
 (load "init-slime-mode")
 (load "init-racket-mode")
-
-(load "init-rainbow-mode")
+(load "init-golang-mode")
 
 (load "init-org")
-(load "init-treemacs")
+;(load "init-treemacs")
 (load "init-helm")
 (load "init-commands")
+
+;(profiler-report)
+;(profiler-stop)
+
+(provide 'init)
+;;; init.el ends here

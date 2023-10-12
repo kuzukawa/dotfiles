@@ -1,4 +1,10 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; package --- Summary
+
+;;; Commentary:
+;; utility commands
+
+;;; Code:
+
 ;; markdown to pdf
 (defun md2pdf ()
 "Generate pdf from currently open markdown."
@@ -16,7 +22,6 @@
   (file-name-sans-extension filename)
   ".pdf"))))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; markdown to docx
 (defun md2docx ()
 "Generate docx from currently open markdown."
@@ -27,14 +32,13 @@
 	filename
 	" -t docx -o "
 	(file-name-sans-extension filename)
-n	 ".docx -f markdown -t docx -c ~/.css/github-markdown.css"))
+	 ".docx -f markdown -t docx -c ~/.css/github-markdown.css"))
 (shell-command-to-string
 (concat "open "
   (file-name-sans-extension filename)
 	".docx"))))
 (put 'upcase-region 'disabled nil)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; markdown to slide(revealjs)
 (defun md2slide ()
 "Generate slide from currently open markdown."
@@ -52,3 +56,6 @@ n	 ".docx -f markdown -t docx -c ~/.css/github-markdown.css"))
 (concat "open "
 	(file-name-sans-extension filename)
 	".html"))))
+
+(provide 'init-commands)
+;;; init-commands.el ends here

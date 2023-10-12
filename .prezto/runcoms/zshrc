@@ -39,7 +39,11 @@ eval "$(jump shell)"
 #--------------------------------------------------------
 # alias
 #--------------------------------------------------------
-alias emacs="emacs -nw"
+alias emacs='emacsclient -t -a ""'
+alias emt='emacsclient -nc -a ""'
+alias emc='emacsclient -t -a ""'
+EDITOR='emacsclient -a ""'
+
 alias la="ls -aFG"
 alias ls="ls -FG"
 alias ll="ls -alFG"

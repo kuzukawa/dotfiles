@@ -79,7 +79,10 @@ brew "leiningen"
 brew "graphviz"
 brew "roswell"
 brew "ngrok/ngrok/ngrok"
+brew "gradle"
+brew "gettext"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835
 mas "feedly. Read more, know more.", id: 865500966
+mas "GeoGebra Classic 6", id: 1182481622

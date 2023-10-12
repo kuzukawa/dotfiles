@@ -1,7 +1,16 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; company
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; package --- Summary
+
+;;; Commentary:
+;; company config
+
+;;; Code:
 (use-package company
+  :defines
+  company-idle-delay
+  company-minimum-prefix-length
+  company-selection-wrap-around
+  company-active-map
+  company-search-map
   :config
   (global-company-mode t)
   (global-set-key (kbd "<C-tab>") 'company-complete)
@@ -18,3 +27,6 @@
     ("C-p" . company-select-previous))
 )
 (use-package company-lsp :commands company-lsp)
+
+(provide 'init-company)
+;;; init-company.el ends here
