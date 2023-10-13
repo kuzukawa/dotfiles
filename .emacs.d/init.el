@@ -7,6 +7,7 @@
 ;(require 'profiler)
 ;(profiler-start 'cpu)
 
+(add-to-list 'load-path "~/.emacs.d/lisp")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; straight
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -108,6 +109,7 @@
 (global-set-key (kbd "C-c t") 'toggle-truncate-lines)
 
 ; open-junk-file
+(load "open-junk-file")
 (setq open-junk-file-format "~/.emacs.d/junk/%Y%m%d-%H%M%S-memo.")
 (global-set-key "\C-xj" 'open-junk-file)
 
@@ -133,7 +135,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; other settings
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(add-to-list 'load-path "~/.emacs.d/lisp")
+
 (load "init-doom")
 (load "init-editorconfig")
 (load "init-company")
