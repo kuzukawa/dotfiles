@@ -81,6 +81,7 @@ brew "roswell"
 brew "ngrok/ngrok/ngrok"
 brew "gradle"
 brew "gettext"
+brew "cmake"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835

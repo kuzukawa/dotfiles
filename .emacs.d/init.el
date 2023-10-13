@@ -158,6 +158,7 @@
 ;(load "init-treemacs")
 (load "init-helm")
 (load "init-commands")
+(load "init-vterm")
 
 ;(profiler-report)
 ;(profiler-stop)
