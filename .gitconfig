@@ -31,7 +31,7 @@
 [core]
         pager = less -m
         quotepath = false
-	editor = emacs -nw
+	editor = vim
         excludesfile = ~/.gitignore_global
 [color]
 	diff = auto

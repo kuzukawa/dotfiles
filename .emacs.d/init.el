@@ -22,34 +22,18 @@
         'silent 'inhibit-cookies)
       (goto-char (point-max))
       (eval-print-last-sexp)))
-  (load bootstrap-file nil 'nomessage))
+   (load bootstrap-file nil 'nomessage))
 (setq warning-suppress-log-types '((package reinitialization)))
 (straight-use-package 'use-package)
 (setq straight-use-package-by-default t)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Package install
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package init-loader)
-(use-package exec-path-from-shell)
-(use-package yaml-mode)
-(use-package php-mode)
-(use-package haskell-mode)
-(use-package protobuf-mode)
-(use-package csharp-mode)
-(use-package apache-mode)
-(use-package yasnippet)
-;(use-package docker)
-;(use-package dockerfile-mode)
-;(add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
-;(use-package docker-compose-mode)
-;(use-package docker-tramp)
-;(set-variable 'docker-tramp-use-names t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; basic settings
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setenv "LANG" "en_US.UTF-8")
+(set-default-coding-systems 'utf-8)
+(prefer-coding-system 'utf-8)
 (setq default-directory "~/")
 
 ;; hide scroll bar
@@ -77,6 +61,9 @@
 ; settings for save-file
 (setq make-backup-files nil)
 (setq auto-save-default nil)
+
+                                        ; stop ring bell
+(setq ring-bell-function 'ignore)
 
 ;; settings for input
 (setq-default indent-tabs-mode nil)
@@ -120,6 +107,7 @@
   (set-frame-parameter nil 'alpha (cons alpha-num '(90))))
 
 ; Initialize exec-path-from-shell
+(use-package exec-path-from-shell)
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 
@@ -135,13 +123,32 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; other settings
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package yaml-mode)
+(use-package php-mode)
+(use-package haskell-mode)
+(use-package protobuf-mode)
+(use-package csharp-mode)
+(use-package apache-mode)
+(use-package yasnippet)
+
+;(use-package docker)
+;(use-package dockerfile-mode)
+;(add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
+;(use-package docker-compose-mode)
+;(use-package docker-tramp)
+;(set-variable 'docker-tramp-use-names t)
+
 
 (load "init-doom")
 (load "init-editorconfig")
 (load "init-company")
 (load "init-flycheck")
 (load "init-copilot")
-(load "init-chatgpt")
+
+(load "init-org")
+(load "init-helm")
+(load "init-commands")
+(load "init-vterm")
 
 (load "init-markdown-mode")
 (load "init-web-mode")
@@ -153,12 +160,7 @@
 (load "init-slime-mode")
 (load "init-racket-mode")
 (load "init-golang-mode")
-
-(load "init-org")
-;(load "init-treemacs")
-(load "init-helm")
-(load "init-commands")
-(load "init-vterm")
+(load "init-imba-mode")
 
 ;(profiler-report)
 ;(profiler-stop)

@@ -5,11 +5,11 @@
 
 ;;; Code:
 (use-package web-mode
-  :mode (("\\.html?\\'" . web-mode)
-         ("\\.css?\\'" . web-mode)
-         ("\\.js?\\'" . web-mode)
-         ("\\.ts?\\'" . web-mode)
-         ("\\.tsx?\\'" . web-mode))
+  :mode (("\\.html\\'" . web-mode)
+         ("\\.css\\'" . web-mode)
+         ("\\.js\\'" . web-mode)
+         ("\\.ts\\'" . web-mode)
+         ("\\.tsx\\'" . web-mode))
   :defines
   web-mode-enable-auto-pairing
   web-mode-enable-auto-closing
@@ -29,11 +29,11 @@
   (add-hook 'web-mode-hook 'lsp))
 
 (use-package rainbow-mode
-  :mode (("\\.html?\\'" . rainbow-mode)
-         ("\\.css?\\'" . rainbow-mode)
-         ("\\.scss?\\'" . rainbow-mode)
-         ("\\.tsx?\\'" . rainbow-mode)
-         ("\\.php?\\'" . rainbow-mode))
+  :mode (("\\.html\\'" . rainbow-mode)
+         ("\\.css\\'" . rainbow-mode)
+         ("\\.scss\\'" . rainbow-mode)
+         ("\\.tsx\\'" . rainbow-mode)
+         ("\\.php\\'" . rainbow-mode))
   :ensure nil
   :defines
   rainbow-html-colors
