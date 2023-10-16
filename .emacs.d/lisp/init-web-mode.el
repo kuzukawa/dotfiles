@@ -6,10 +6,11 @@
 ;;; Code:
 (use-package web-mode
   :mode (("\\.html\\'" . web-mode)
-         ("\\.css\\'" . web-mode)
-         ("\\.js\\'" . web-mode)
-         ("\\.ts\\'" . web-mode)
-         ("\\.tsx\\'" . web-mode))
+          ("\\.css\\'" . web-mode)
+          ("\\.js\\'" . web-mode)
+          ("\\.jsx\\'" . web-mode)
+          ("\\.ts\\'" . web-mode)
+          ("\\.tsx\\'" . web-mode))
   :defines
   web-mode-enable-auto-pairing
   web-mode-enable-auto-closing
@@ -29,11 +30,6 @@
   (add-hook 'web-mode-hook 'lsp))
 
 (use-package rainbow-mode
-  :mode (("\\.html\\'" . rainbow-mode)
-         ("\\.css\\'" . rainbow-mode)
-         ("\\.scss\\'" . rainbow-mode)
-         ("\\.tsx\\'" . rainbow-mode)
-         ("\\.php\\'" . rainbow-mode))
   :ensure nil
   :defines
   rainbow-html-colors
@@ -44,8 +40,21 @@
   (setq rainbow-html-colors t)
   (setq rainbow-x-colors t)
   (setq rainbow-latex-colors t)
-  (setq rainbow-ansi-colors t))
+  (setq rainbow-ansi-colors t)
+  :config
+  (add-hook 'css-mode-hook 'rainbow-mode)
+  (add-hook 'scss-mode-hook 'rainbow-mode)
+  (add-hook 'php-mode-hook 'rainbow-mode)
+  (add-hook 'html-mode-hook 'rainbow-mode))
+
+(use-package emmet-mode
+  :defines
+  emmet-indentation
+  :config
+  (add-to-list 'load-path "~/.emacs.d/emmet/")
+  (add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2)))
+  (add-hook 'php-mode-hook 'rainbow-mode)
+  (add-hook 'html-mode-hook 'rainbow-mode))
 
 (provide 'init-web-mode)
 ;;; init-web-mode.el ends here
-

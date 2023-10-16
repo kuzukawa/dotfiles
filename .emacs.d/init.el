@@ -152,7 +152,6 @@
 
 (load "init-markdown-mode")
 (load "init-web-mode")
-(load "init-emmet-mode")
 (load "init-javascript-mode")
 (load "init-typescript-mode")
 (load "init-rjsx-mode")
