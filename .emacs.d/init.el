@@ -152,15 +152,24 @@
 
 (load "init-markdown-mode")
 (load "init-web-mode")
+(load "init-json-mode")
 (load "init-javascript-mode")
 (load "init-typescript-mode")
-(load "init-rjsx-mode")
 (load "init-rust-mode")
 (load "init-slime-mode")
 (load "init-racket-mode")
 (load "init-golang-mode")
 (load "init-imba-mode")
 
+(add-to-list 'load-path "~/tools/opt/wat-mode/")
+(require 'wat-mode)
+
+(use-package graphviz-dot-mode
+  :ensure t
+  :config
+  (setq graphviz-dot-indent-width 4))
+
+;(load "init-rjsx-mode")
 ;(profiler-report)
 ;(profiler-stop)
 
