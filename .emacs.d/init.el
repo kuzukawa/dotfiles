@@ -8,6 +8,10 @@
 ;(profiler-start 'cpu)
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
+
+(if (file-exists-p "~/.emacs.d/.env.el")
+    (load "~/.emacs.d/.env.el"))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; straight
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -26,7 +30,6 @@
 (setq warning-suppress-log-types '((package reinitialization)))
 (straight-use-package 'use-package)
 (setq straight-use-package-by-default t)
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; basic settings
@@ -144,6 +147,7 @@
 (load "init-company")
 (load "init-flycheck")
 (load "init-copilot")
+(load "init-chatgpt")
 
 (load "init-org")
 (load "init-helm")
