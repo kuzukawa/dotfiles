@@ -25,6 +25,8 @@ cask "discord"
 cask "zulip"
 cask "cljstyle"
 cask "google-cloud-sdk"
+cask "graphql-playground"
+cask "mongodb-compass"
 cask "docker"
 brew "docker"
 
@@ -82,6 +84,8 @@ brew "ngrok/ngrok/ngrok"
 brew "gradle"
 brew "gettext"
 brew "cmake"
+brew "mvn"
+brew "openapi-generator"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835

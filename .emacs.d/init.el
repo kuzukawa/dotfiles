@@ -154,6 +154,7 @@
 (load "init-commands")
 (load "init-vterm")
 
+(load "init-graphql-mode")
 (load "init-markdown-mode")
 (load "init-web-mode")
 (load "init-json-mode")
