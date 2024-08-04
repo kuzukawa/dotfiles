@@ -86,6 +86,8 @@ brew "gettext"
 brew "cmake"
 brew "mvn"
 brew "openapi-generator"
+brew "kubectl"
+brew "kind"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835
