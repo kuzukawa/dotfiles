@@ -73,6 +73,7 @@ fi
 # Add my own tools to PATH.
 export PATH=~/.local/bin:${PATH}
 export PATH=~/tools/bin:${PATH}
+export PATH=~/development/flutter/bin:${PATH}
 
 # init google-cloud-sdk
 source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
