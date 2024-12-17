@@ -4,6 +4,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "heroku/brew"
 tap "aws/tap"
+tap "leoafarias/fvm"
 
 cask "google-chrome"
 cask "box-drive"
@@ -88,6 +89,7 @@ brew "mvn"
 brew "openapi-generator"
 brew "kubectl"
 brew "kind"
+brew "fvm"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835
