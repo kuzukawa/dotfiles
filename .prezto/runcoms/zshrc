@@ -51,6 +51,8 @@ alias dc="docker compose"
 alias do="docker"
 alias brewx="arch -x86_64 /usr/local/bin/brew"
 alias dm="ruby ~/tools/bin/docker-manifest.rb"
+alias flutter="fvm flutter"
+alias dart="fvm dart"
 
 #--------------------------------------------------------
 # path
@@ -79,4 +81,10 @@ incremental_search_history() {
 zle -N incremental_search_history
 bindkey "^R" incremental_search_history
 [ -f "/Users/kuzukawa/.ghcup/env" ] && source "/Users/kuzukawa/.ghcup/env" # ghcup-env
+
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/kuzukawa/.dart-cli-completion/zsh-config.zsh ]] && . /Users/kuzukawa/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
 
