@@ -29,6 +29,7 @@ cask "google-cloud-sdk"
 cask "graphql-playground"
 cask "mongodb-compass"
 cask "docker"
+cask "tigervnc-viewer"
 brew "docker"
 
 brew "asdf"
