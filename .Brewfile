@@ -91,6 +91,9 @@ brew "openapi-generator"
 brew "kubectl"
 brew "kind"
 brew "fvm"
+brew "rust-analyzer"
+brew "direnv"
+brew "ktlint"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835

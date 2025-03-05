@@ -77,6 +77,7 @@
 ; Initialize alpha
 (set-frame-parameter nil 'alpha 90)
 
+(set-face-font 'default "JetBrains Mono-14")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Theme
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -115,6 +116,24 @@
   (exec-path-from-shell-initialize))
 
 (put 'downcase-region 'disabled nil)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Tramp
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(customize-set-variable
+ 'tramp-otp-password-prompt-regexp
+  (concat
+   "^.*"
+   (regexp-opt
+    '("passphrase" "Passphrase"
+      ;; English
+      "password" "Password"
+      ;; Deutsch
+      "passwort" "Passwort"
+      ;; Français
+      "mot de passe" "Mot de passe")
+    t)
+   ".*:\0? *"))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; alias
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -130,7 +149,6 @@
 (use-package php-mode)
 (use-package haskell-mode)
 (use-package protobuf-mode)
-(use-package csharp-mode)
 (use-package apache-mode)
 (use-package yasnippet)
 
@@ -147,14 +165,14 @@
 (load "init-company")
 (load "init-flycheck")
 (load "init-copilot")
-(load "init-chatgpt")
+;(load "init-chatgpt")
 
 (load "init-org")
 (load "init-helm")
 (load "init-commands")
 (load "init-vterm")
 
-(load "init-graphql-mode")
+;(load "init-graphql-mode")
 (load "init-markdown-mode")
 (load "init-web-mode")
 (load "init-json-mode")
@@ -164,7 +182,7 @@
 (load "init-slime-mode")
 (load "init-racket-mode")
 (load "init-golang-mode")
-(load "init-imba-mode")
+;(load "init-imba-mode")
 
 (add-to-list 'load-path "~/tools/opt/wat-mode/")
 (require 'wat-mode)
