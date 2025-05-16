@@ -73,6 +73,7 @@ fi
 # Add my own tools to PATH.
 export PATH=~/.local/bin:${PATH}
 export PATH=~/tools/bin:${PATH}
+export PATH=/opt/homebrew/opt/coreutils/libexec/gnubin:${PATH}
 
 
 # init google-cloud-sdk

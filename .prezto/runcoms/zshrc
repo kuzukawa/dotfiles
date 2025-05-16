@@ -106,3 +106,7 @@ typeset -ag chpwd_functions
 if (( ! ${chpwd_functions[(I)_direnv_hook]} )); then
   chpwd_functions=(_direnv_hook $chpwd_functions)
 fi
+
+if command -v cline >/dev/null 2>&1; then
+  eval "$(cline shell-init zsh)"
+fi
