@@ -95,6 +95,7 @@ brew "rust-analyzer"
 brew "direnv"
 brew "ktlint"
 brew "coreutils"
+brew "grpcurl"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835
