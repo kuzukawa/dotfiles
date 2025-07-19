@@ -20,7 +20,7 @@ cask "drawio"
 cask "font-jetbrains-mono"
 cask "choosy"
 cask "firefox"
-cask "racket"
+ncask "racket"
 cask "azure-cli"
 cask "discord"
 cask "zulip"
@@ -96,6 +96,7 @@ brew "direnv"
 brew "ktlint"
 brew "coreutils"
 brew "grpcurl"
+brew "marp-cli"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835

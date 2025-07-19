@@ -61,7 +61,7 @@
   "Text scale for neotree."
   (interactive)
   (text-scale-adjust 0)
-  (text-scale-decrease 1)
+  (text-scale-decrease 0)
   (message nil))
 (add-hook 'neo-after-create-hook
       (lambda (_)
@@ -70,8 +70,7 @@
 ;; neotree enter hide
 ;; Tips from https://github.com/jaypei/emacs-neotree/issues/77
 (defun neo-open-file-hide (full-path &optional arg)
-  "Open file and hiding neotree.
-The description of FULL-PATH & ARG is in `neotree-enter'."
+  "Open file and hiding neotree.The description of FULL-PATH & ARG is in `neotree-enter'."
   (neo-global--select-mru-window arg)
   (find-file full-path)
   (neotree-hide))
