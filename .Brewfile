@@ -97,6 +97,7 @@ brew "ktlint"
 brew "coreutils"
 brew "grpcurl"
 brew "marp-cli"
+brew "gemini-cli"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835
