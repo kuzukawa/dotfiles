@@ -110,3 +110,19 @@ fi
 if command -v cline >/dev/null 2>&1; then
   eval "$(cline shell-init zsh)"
 fi
+
+# Added by Antigravity
+export PATH="/Users/kuzukawa/.antigravity/antigravity/bin:$PATH"
+
+# Azure Cli
+autoload bashcompinit && bashcompinit
+source $(brew --prefix)/etc/bash_completion.d/az
+
+# bun completions
+[ -s "/Users/kuzukawa/.bun/_bun" ] && source "/Users/kuzukawa/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+alias claude-mem='/Users/kuzukawa/.bun/bin/bun "/Users/kuzukawa/.claude/plugins/marketplaces/thedotmack/plugin/scripts/worker-service.cjs"'
