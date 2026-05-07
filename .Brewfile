@@ -99,6 +99,7 @@ brew "grpcurl"
 brew "marp-cli"
 brew "gemini-cli"
 brew "llm"
+brew "zoxide"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835
