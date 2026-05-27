@@ -198,3 +198,30 @@
 
 (provide 'init)
 ;;; init.el ends here
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(help-at-pt-display-when-idle '(flymake-overlay) nil (help-at-pt))
+ '(help-at-pt-timer-delay 0.3)
+ '(markdown-command '("pandoc" "--from=markdown" "--to=html5"))
+ '(markdown-fontify-code-blocks-natively t)
+ '(markdown-header-scaling t)
+ '(markdown-indent-on-enter 'indent-and-new-item)
+ '(org-agenda-files
+   '("/Users/kuzukawa/Library/CloudStorage/GoogleDrive-kuzukawa@gmail.com/My Drive/org/todo.org"
+     "/Users/kuzukawa/Library/CloudStorage/GoogleDrive-kuzukawa@gmail.com/My Drive/org/daily/2023.org"
+     "/Users/kuzukawa/Library/CloudStorage/GoogleDrive-kuzukawa@gmail.com/My Drive/org/daily/2024.org"
+     "/Users/kuzukawa/Library/CloudStorage/GoogleDrive-kuzukawa@gmail.com/My Drive/org/daily/2025.org"
+     "/Users/kuzukawa/Library/CloudStorage/GoogleDrive-kuzukawa@gmail.com/My Drive/org/study")))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-level-1 ((t (:foreground "Cyan" :weight normal :height 1.4))))
+ '(org-level-2 ((t (:foreground "Cyan" :weight normal :height 1.3))))
+ '(org-level-3 ((t (:foreground "Cyan" :weight normal :height 1.2))))
+ '(org-level-4 ((t (:foreground "dodger blue" :weight normal :height 1.1))))
+ '(org-level-5 ((t (:foreground "CadetBlue" :weight normal :height 1.0)))))

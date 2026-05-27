@@ -25,10 +25,10 @@
 (setq org-directory "~/Library/CloudStorage/GoogleDrive-kuzukawa@gmail.com/My Drive/org")
 (setq org-default-notes-file (concat org-directory "/todo.org"))
 (setq org-agenda-files (list org-default-notes-file
-                            (concat org-directory "/projects")
-                            (concat org-directory "/personal")
+;                            (concat org-directory "/projects")
+;                            (concat org-directory "/personal")
                             (concat org-directory "/daily")
-                            (concat org-directory "/study")))
+;                            (concat org-directory "/study")))
 
 ; Org-captureの設定
 
