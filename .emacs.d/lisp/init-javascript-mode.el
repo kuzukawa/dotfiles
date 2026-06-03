@@ -30,35 +30,9 @@
   :config
   (which-key-mode))
 
-(use-package company :ensure t :defer 20
-  ;; This is not perfect yet. It completes too quickly outside programming modes, but while programming it is just right.
-  :custom
-  (company-idle-delay 0.1)
-  (global-company-mode t)
-  (debug-on-error nil) ;; otherwise this throws lots of errors on completion errors
-  :config
-  (define-key company-active-map (kbd "TAB") 'company-complete-selection)
-  (define-key company-active-map (kbd "<tab>") 'company-complete-selection)
-  (define-key company-active-map [return] 'company-complete-selection)
-  (define-key company-active-map (kbd "RET") 'company-complete-selection)
-  ;; auto-complete compatibility
-  (defun my-company-visible-and-explicit-action-p ()
-    (and (company-tooltip-visible-p)
-         (company-explicit-action-p)))
-  (defun company-ac-setup ()
-    "Sets up `company-mode' to behave similarly to `auto-complete-mode'."
-    (setq company-require-match nil)
-    (setq company-auto-complete #'my-company-visible-and-explicit-action-p)
-    (setq company-frontends '(company-echo-metadata-frontend
-                              company-pseudo-tooltip-unless-just-one-frontend-with-delay
-                              company-preview-frontend))
-    (define-key company-active-map [tab]
-      'company-select-next-if-tooltip-visible-or-complete-selection)
-    (define-key company-active-map (kbd "TAB")
-      'company-select-next-if-tooltip-visible-or-complete-selection))
-
-  (company-ac-setup)
-  (add-hook 'js2-mode-hook (lambda () (company-mode))))
+;; company is configured globally in init-company.el. The previous, second
+;; company setup here (with a conflicting idle-delay and a global-company-mode
+;; re-init) was removed to avoid two competing configurations.
 
 (use-package company-quickhelp :ensure t :defer 30
   :config
@@ -88,17 +62,14 @@
   (glasses-separator "")
   :config
   (add-hook 'js-mode-hook (lambda () (flymake-eslint-enable)(flymake-mode -1)(flycheck-mode 1)(glasses-mode 1)))
-  (add-hook 'js2-mode-hook (lambda () (flymake-eslint-enable)(flymake-mode -1)(flycheck-mode 1)(glasses-mode 1)))
-  (custom-set-variables
-     '(help-at-pt-timer-delay 0.3)
-     '(help-at-pt-display-when-idle '(flymake-overlay))))
+  (add-hook 'js2-mode-hook (lambda () (flymake-eslint-enable)(flymake-mode -1)(flycheck-mode 1)(glasses-mode 1))))
+;; help-at-pt-* are set once in init.el's custom-set-variables block.
 (use-package flymake-diagnostic-at-point :ensure t :defer 20
   :config
   (flymake-diagnostic-at-point-mode t))
 
-(use-package tern :ensure t :defer 30
-  :if (locate-file "tern" exec-path)
-  :hook (js2-mode . tern-mode))
+;; tern / company-tern removed: the tern server is abandoned (EOL 2018);
+;; JS completion is provided by eglot (see js2-mode-hook below).
 (use-package json-mode :ensure t :defer 20
   :custom
   (json-reformat:indent-width 2)
@@ -109,12 +80,6 @@
   :bind (:package json-mode-map
          :map json-mode-map
          ("C-c <tab>" . json-mode-beautify)))
-
-(use-package company-tern :ensure t :defer 30
-  :config
-  (add-to-list 'company-backends 'company-tern)
-  (define-key tern-mode-keymap (kbd "M-.") nil)
-  (define-key tern-mode-keymap (kbd "M-,") nil))
 
 (use-package js2-refactor :ensure t :defer 30
   :config

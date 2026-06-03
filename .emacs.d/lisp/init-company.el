@@ -26,7 +26,8 @@
     ("C-n" . company-select-next)
     ("C-p" . company-select-previous))
 )
-(use-package company-lsp :commands company-lsp)
+;; company-lsp is archived/obsolete; modern LSP completion is handled by
+;; the built-in company-capf backend (used by both lsp-mode and eglot).
 
 (provide 'init-company)
 ;;; init-company.el ends here

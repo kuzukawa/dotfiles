@@ -5,11 +5,11 @@
 
 ;;; Code:
 (use-package web-mode
+  ;; .js -> js2-mode (init-javascript), .ts -> typescript-mode (init-typescript).
+  ;; web-mode handles templates and JSX/TSX only, to avoid major-mode collisions.
   :mode (("\\.html\\'" . web-mode)
           ("\\.css\\'" . web-mode)
-          ("\\.js\\'" . web-mode)
           ("\\.jsx\\'" . web-mode)
-          ("\\.ts\\'" . web-mode)
           ("\\.tsx\\'" . web-mode))
   :defines
   web-mode-enable-auto-pairing

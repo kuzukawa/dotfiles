@@ -18,11 +18,11 @@
   (add-hook 'typescript-mode-hook
             (lambda ()
               (interactive)
+              ;; TypeScript uses tide as its LSP client; do not also start
+              ;; eglot here (running two LSP clients in one buffer conflicts).
               (tide-setup)
-              (eglot-ensure)
               (flycheck-mode +1)
               (setq flycheck-check-syntax-automatically '(save mode-enabled))
-              (eldoc-mode +1)
               (tide-hl-identifier-mode +1)
               (company-mode +1)
               (eldoc-mode +1)))

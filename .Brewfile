@@ -43,7 +43,6 @@ brew "ghq"
 brew "tree"
 brew "bat"
 brew "gpg"
-brew "zplug"
 brew "heroku"
 brew "awscli"
 brew "git"
@@ -99,7 +98,9 @@ brew "grpcurl"
 brew "marp-cli"
 brew "gemini-cli"
 brew "llm"
+brew "fzf"
 brew "zoxide"
+brew "antidote"
 
 mas "CyberDuck", id: 409222199
 mas "Xcode ", id: 497799835

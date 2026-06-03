@@ -3,13 +3,9 @@
 ## prerequisite
 ## You have to login to Mac App Store before use this.
 
-
 # Command Line Tools
 echo "Installing Command Line Tools for Xcode..."
 xcode-select --install
-
-# Prezto
-[ ! -d ${ZDOTDIR:-$HOME}/.zprezto ] && git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 # tpm(tmux plugin)
 [ ! -d ~/.tmux/plugins/tpm ] && mkdir -p ~/.tmux/plugins/tpm && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -39,24 +35,24 @@ which brew >/dev/null 2>&1 && brew cleanup --verbose
 #------------------------------------------
 # homebrew(x86_64)
 #------------------------------------------
-echo "Installing homebrew(x86_64)..."
-which /usr/local/bin/brew >/dev/null 2>&1 || arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# echo "Installing homebrew(x86_64)..."
+# which /usr/local/bin/brew >/dev/null 2>&1 || arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-echo "Executing brew doctor(x86_64)..."
-which /usr/local/bin/brew >/dev/null 2>&1 && arch -x86_64 /usr/local/bin/brew doctor
+# echo "Executing brew doctor(x86_64)..."
+# which /usr/local/bin/brew >/dev/null 2>&1 && arch -x86_64 /usr/local/bin/brew doctor
 
-echo "Running brew update(x86_64)..."
-which /usr/local/bin/brew >/dev/null 2>&1 && arch -x86_64 /usr/local/bin/brew update --verbose
+# echo "Running brew update(x86_64)..."
+# which /usr/local/bin/brew >/dev/null 2>&1 && arch -x86_64 /usr/local/bin/brew update --verbose
 
-echo "Running brew upgrade(x86_64)..."
-which /usr/local/bin/brew >/dev/null 2>&1 && arch -x86_64 /usr/local/bin/brew upgrade --verbose
+# echo "Running brew upgrade(x86_64)..."
+# which /usr/local/bin/brew >/dev/null 2>&1 && arch -x86_64 /usr/local/bin/brew upgrade --verbose
 
-### bundle with .Brewfile
-echo "Installing apps with .Brewfile_x86_64)..."
-which /usr/local/bin/brew >/dev/null 2>&1 && arch -x86_64 /usr/local/bin/brew bundle --file ./.Brewfile_x86_64 --verbose
+# ### bundle with .Brewfile
+# echo "Installing apps with .Brewfile_x86_64)..."
+# which /usr/local/bin/brew >/dev/null 2>&1 && arch -x86_64 /usr/local/bin/brew bundle --file ./.Brewfile_x86_64 --verbose
 
-echo "Running brew cleanup..."
-which /usr/local/bin/brew >/dev/null 2>&1 && arch -x86_64 /usr/local/bin/brew cleanup --verbose
+# echo "Running brew cleanup..."
+# which /usr/local/bin/brew >/dev/null 2>&1 && arch -x86_64 /usr/local/bin/brew cleanup --verbose
 
 ### create symbolic links
 echo "Creating symlinks..."
@@ -67,9 +63,8 @@ which brew >/dev/null 2>&1 && brew cleanup --verbose
 
 
 
-### zplug install
-echo "Installing zplug..."
-exec $SHELL -l && zplug install
-
 ### git config
 git config --global commit.template ~/.commit_template
+
+# zsh plugins are managed by antidote and cloned automatically
+# on the first interactive shell launch (see .zsh_plugins.txt).

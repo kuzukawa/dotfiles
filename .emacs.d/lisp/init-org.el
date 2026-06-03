@@ -7,13 +7,7 @@
 (use-package org-bullets
       :hook (org-mode . org-bullets-mode))
 
-(custom-set-faces
- '(org-level-1 ((t (:foreground "Cyan" :weight normal :height 1.4))))
- '(org-level-2 ((t (:foreground "Cyan" :weight normal :height 1.3))))
- '(org-level-3 ((t (:foreground "Cyan" :weight normal :height 1.2))))
- '(org-level-4 ((t (:foreground "dodger blue" :weight normal :height 1.1))))
- '(org-level-5 ((t (:foreground "CadetBlue" :weight normal :height 1.0))))
-)
+;; org-level faces are defined once in init.el's custom-set-faces block.
 
 (setq org-todo-keywords '((sequence "TODO(t)" "SOMEDAY(s)" "WAITING(w)" "|"  "DONE(d)")))
 (setq org-log-done 'time)
@@ -25,10 +19,7 @@
 (setq org-directory "~/Library/CloudStorage/GoogleDrive-kuzukawa@gmail.com/My Drive/org")
 (setq org-default-notes-file (concat org-directory "/todo.org"))
 (setq org-agenda-files (list org-default-notes-file
-;                            (concat org-directory "/projects")
-;                            (concat org-directory "/personal")
-                            (concat org-directory "/daily")
-;                            (concat org-directory "/study")))
+                             (concat org-directory "/daily")))
 
 ; Org-captureの設定
 
@@ -62,18 +53,17 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; org-babel
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(org-babel-do-load-languages
-'org-babel-load-languages
-'(
-  (shell . t)
-  (ruby . t)
-  (python . t)
-  (js . t)
-  (java . t)
-  (C . t)
-  (lisp . t)
-  (haskell . t)
-  ))
+(with-eval-after-load 'org
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((shell . t)
+     (ruby . t)
+     (python . t)
+     (js . t)
+     (java . t)
+     (C . t)
+     (lisp . t)
+     (haskell . t))))
 
 (provide 'init-org)
 ;;; init-org.el ends here

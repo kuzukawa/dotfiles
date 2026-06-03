@@ -8,12 +8,9 @@
 ;; markdown preview mode
 (add-to-list 'auto-mode-alist '("\\.markdown\\'". gfm-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
+;; markdown-command / fontify / header-scaling / indent-on-enter are set once
+;; in init.el's custom-set-variables block.
 (with-eval-after-load 'markdown-mode
-  (custom-set-variables
-   '(markdown-command '("pandoc" "--from=markdown" "--to=html5"))
-   '(markdown-fontify-code-blocks-natively t)
-   '(markdown-header-scaling t)
-   '(markdown-indent-on-enter 'indent-and-new-item))
   (define-key markdown-mode-map (kbd "<S-tab>") #'markdown-shifttab))
 
 ;(setq markdown-fontify-code-blocks-natively t)

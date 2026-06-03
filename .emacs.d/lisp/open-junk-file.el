@@ -113,7 +113,7 @@
 ;;; Code:
 
 (defvar open-junk-file-version "$Id: open-junk-file.el,v 1.3 2010/06/18 20:07:49 rubikitch Exp rubikitch $")
-(eval-when-compile (require 'cl))
+(eval-when-compile (require 'cl-lib))
 (defgroup open-junk-file nil
   "open-junk-file"
   :group 'emacs)

@@ -1,4 +1,4 @@
-;;; package --- Summery
+;;; package --- Summary
 
 ;;; Commentary:
 
@@ -18,11 +18,11 @@
 (defvar bootstrap-version)
 (let ((bootstrap-file
       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-      (bootstrap-version 5))
+      (bootstrap-version 7))
   (unless (file-exists-p bootstrap-file)
     (with-current-buffer
         (url-retrieve-synchronously
-        "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+        "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
         'silent 'inhibit-cookies)
       (goto-char (point-max))
       (eval-print-last-sexp)))
@@ -77,7 +77,7 @@
 ; Initialize alpha
 (set-frame-parameter nil 'alpha 90)
 
-(set-face-font 'default "JetBrains Mono-14")
+(set-face-attribute 'default nil :font "JetBrains Mono-14")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Theme
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -165,14 +165,12 @@
 (load "init-company")
 (load "init-flycheck")
 (load "init-copilot")
-;(load "init-chatgpt")
 
 (load "init-org")
 (load "init-helm")
 (load "init-commands")
 (load "init-vterm")
 
-;(load "init-graphql-mode")
 (load "init-markdown-mode")
 (load "init-web-mode")
 (load "init-json-mode")
@@ -182,7 +180,6 @@
 (load "init-slime-mode")
 (load "init-racket-mode")
 (load "init-golang-mode")
-;(load "init-imba-mode")
 
 (add-to-list 'load-path "~/tools/opt/wat-mode/")
 (require 'wat-mode)
@@ -192,7 +189,6 @@
   :config
   (setq graphviz-dot-indent-width 4))
 
-;(load "init-rjsx-mode")
 ;(profiler-report)
 ;(profiler-stop)
 
@@ -208,13 +204,9 @@
  '(markdown-command '("pandoc" "--from=markdown" "--to=html5"))
  '(markdown-fontify-code-blocks-natively t)
  '(markdown-header-scaling t)
- '(markdown-indent-on-enter 'indent-and-new-item)
- '(org-agenda-files
-   '("/Users/kuzukawa/Library/CloudStorage/GoogleDrive-kuzukawa@gmail.com/My Drive/org/todo.org"
-     "/Users/kuzukawa/Library/CloudStorage/GoogleDrive-kuzukawa@gmail.com/My Drive/org/daily/2023.org"
-     "/Users/kuzukawa/Library/CloudStorage/GoogleDrive-kuzukawa@gmail.com/My Drive/org/daily/2024.org"
-     "/Users/kuzukawa/Library/CloudStorage/GoogleDrive-kuzukawa@gmail.com/My Drive/org/daily/2025.org"
-     "/Users/kuzukawa/Library/CloudStorage/GoogleDrive-kuzukawa@gmail.com/My Drive/org/study")))
+ '(markdown-indent-on-enter 'indent-and-new-item))
+;; org-agenda-files is set in init-org.el (todo.org + the daily/ directory),
+;; replacing the stale hard-coded per-year list that used to live here.
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
